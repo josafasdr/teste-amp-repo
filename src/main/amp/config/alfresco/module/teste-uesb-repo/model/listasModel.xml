@@ -1,0 +1,502 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="li:listas" xmlns="http://www.alfresco.org/model/dictionary/1.0">
+
+	<description>Listas de atributos utilizados nos documentos de Recursos Humanos da UESB</description>
+	<author>Josafá Santos dos Reis</author>
+	<version>1.0</version>
+
+	<imports>
+	  <import prefix="d" uri="http://www.alfresco.org/model/dictionary/1.0"></import>
+	  <import prefix="cm" uri="http://www.alfresco.org/model/content/1.0"></import>
+	</imports>
+
+	<namespaces>
+	  <namespace uri="http://www.uesb.br/model/listas/1.0" prefix="li"></namespace>
+	</namespaces>
+
+	<constraints>
+	
+		<!-- Tipos de pastas de prontuario -->
+		<constraint name="li:sexo" type="LIST">
+			<title>Tipos de Pasta</title>
+			<parameter name="allowedValues">
+				<list>
+					<value></value>
+					<value>F</value>
+					<value>M</value>
+				</list>
+			</parameter>			
+		</constraint>
+		
+		<!-- Tipos de pastas de prontuario -->
+		<constraint name="li:tipo_pasta" type="LIST">
+			<title>Tipos de Pasta</title>
+			<parameter name="allowedValues">
+				<list>
+					<value>Pastas:</value>
+					<value>Volumes:</value>
+				</list>
+			</parameter>			
+		</constraint>
+	
+		<!-- Tipos de documentos admissionais -->
+		<constraint name="li:tipo_doc_admissional" type="LIST">
+			<title>Grau de Instrução</title>
+			<parameter name="allowedValues">
+				<list>
+					<value></value>
+					<value>1</value>
+					<value>2</value>
+					<value>3</value>
+					<value>4</value>
+					<value>5</value>
+				</list>
+			</parameter>			
+		</constraint>
+		
+		<!-- Lista de módulos do prontuário -->
+		<constraint name="li:modulo" type="LIST">
+			<title>Módulo</title>
+			<parameter name="allowedValues">
+				<list>
+					<value></value>
+					<value>AD1</value>
+					<value>FE1</value>
+					<value>FE2</value>
+					<value>FR1</value>
+					<value>LN1</value>
+					<value>PE1</value>
+					<value>PE2</value>
+					<value>PE3</value>
+					<value>PE4</value>
+					<value>PE5</value>
+					<value>PR1</value>
+					<value>AP</value>
+					<value>D</value>
+					<value>RV</value>
+					<value>EST</value>
+					<value>CX</value>
+					<value>SI</value>
+				</list>
+			</parameter>
+			<parameter name="caseSensitive">
+					<value>true</value>
+			</parameter>
+		</constraint>
+
+		<!-- Lista de cargos-->
+		<constraint name="li:cargo" type="LIST">
+			<title>Cargo</title>
+			<parameter name="allowedValues">
+				<list>
+					<value></value>
+					<value>Analista Universitário</value>
+					<value>Analista Técnico</value>
+					<value>Apoio</value>
+					<value>Assisistente Administrativo</value>
+					<value>Auxiliar Administrativo</value>
+					<value>Livre Nomeado</value>
+					<value>Procurador Jurídico</value>
+					<value>Professor Auxiliar</value>
+					<value>Professor Assisistente</value>
+					<value>Professor Adjunto</value>
+					<value>Professor Titular</value>
+					<value>Professor Pleno</value>
+					<value>Professor REDA</value>
+					<value>Técnico Universitário</value>
+					<value>Técnico Administrativo</value>
+					<value>Técnico REDA Nível Médio</value>
+					<value>Técnico REDA Nível Superior</value>
+					<!--
+					<value>285</value>
+					<value>286</value>
+					<value>383</value>
+					<value>365</value>
+					<value>580</value>
+					<value>287</value>
+					<value>374</value>
+					<value>369</value>
+					<value>288</value>
+					<value>289</value>
+					<value>290</value>
+					<value>356</value>
+					<value>291</value>
+					<value>371</value>
+					<value>292</value>
+					<value>293</value>
+					<value>294</value>
+					<value>295</value>
+					<value>611</value>
+					<value>296</value>
+					<value>381</value>
+					<value>363</value>
+					<value>366</value>
+					<value>297</value>
+					<value>298</value>
+					<value>380</value>
+					<value>299</value>
+					<value>300</value>
+					<value>367</value>
+					<value>301</value>
+					<value>302</value>
+					<value>361</value>
+					<value>364</value>
+					<value>303</value>
+					<value>304</value>
+					<value>379</value>
+					<value>305</value>
+					<value>307</value>
+					<value>562</value>
+					<value>308</value>
+					<value>309</value>
+					<value>310</value>
+					<value>311</value>
+					<value>312</value>
+					<value>313</value>
+					<value>314</value>
+					<value>315</value>
+					<value>316</value>
+					<value>317</value>
+					<value>615</value>
+					<value>318</value>
+					<value>319</value>
+					<value>320</value>
+					<value>564</value>
+					<value>563</value>
+					<value>321</value>
+					<value>322</value>
+					<value>323</value>
+					<value>378</value>
+					<value>609</value>
+					<value>324</value>
+					<value>325</value>
+					<value>358</value>
+					<value>376</value>
+					<value>326</value>
+					<value>327</value>
+					<value>328</value>
+					<value>329</value>
+					<value>330</value>
+					<value>331</value>
+					<value>332</value>
+					<value>333</value>
+					<value>334</value>
+					<value>335</value>
+					<value>336</value>
+					<value>337</value>
+					<value>368</value>
+					<value>338</value>
+					<value>339</value>
+					<value>340</value>
+					<value>382</value>
+					<value>341</value>
+					<value>565</value>
+					<value>342</value>
+					<value>343</value>
+					<value>344</value>
+					<value>359</value>
+					<value>360</value>
+					<value>372</value>
+					<value>384</value>
+					<value>370</value>
+					<value>346</value>
+					<value>347</value>
+					<value>348</value>
+					<value>349</value>
+					<value>350</value>
+					<value>357</value>
+					<value>351</value>
+					<value>352</value>
+					<value>353</value>
+					<value>354</value>
+					<value>373</value>
+					<value>377</value>
+					<value>355</value>
+					<value>375</value>
+					-->
+				</list>
+			</parameter>
+		</constraint>
+		
+		<!-- Lista de tipos de ocorrência -->
+		<constraint name="li:tipo_ocorrencia" type="LIST">
+			<title>Tipos de ocorrência</title>
+			<parameter name="allowedValues">
+				<list>
+					<value></value>
+					<value>1</value>
+					<value>2</value>
+					<value>3</value>
+					<value>4</value>
+					<value>5</value>
+					<value>6</value>
+					<value>7</value>
+					<value>8</value>
+					<value>9</value>
+					<value>10</value>
+					<value>11</value>
+					<value>12</value>
+					<value>13</value>
+					<value>14</value>
+					<value>15</value>
+					<value>16</value>
+					<value>17</value>
+					<value>18</value>
+					<value>19</value>
+					<value>20</value>
+					<value>21</value>
+					<value>22</value>
+					<value>23</value>
+					<value>24</value>
+					<value>25</value>
+					<value>26</value>
+					<value>27</value>
+					<value>28</value>
+					<value>29</value>
+					<value>30</value>
+					<value>31</value>
+					<value>32</value>
+					<value>33</value>
+					<value>34</value>
+					<value>35</value>
+					<value>36</value>
+					<value>37</value>
+					<value>38</value>
+					<value>39</value>
+					<value>40</value>
+					<value>41</value>
+					<value>42</value>
+					<value>43</value>
+					<value>44</value>
+					<value>45</value>
+					<value>46</value>
+					<value>47</value>
+					<value>48</value>
+					<value>49</value>
+					<value>50</value>
+					<value>51</value>
+					<value>52</value>
+					<value>53</value>
+					<value>54</value>
+					<value>55</value>
+					<value>56</value>
+					<value>57</value>
+					<value>58</value>
+					<value>59</value>
+					<value>60</value>
+					<value>61</value>
+					<value>62</value>
+					<value>63</value>
+					<value>64</value>
+					<value>65</value>
+					<value>66</value>
+					<value>67</value>
+					<value>68</value>
+					<value>69</value>
+					<value>70</value>
+					<value>71</value>
+					<value>72</value>
+					<value>73</value>
+					<value>74</value>
+					<value>75</value>
+					<value>76</value>
+					<value>77</value>
+					<value>78</value>
+					<value>79</value>
+					<value>80</value>
+					<value>81</value>
+					<value>82</value>
+					<value>83</value>
+					<value>84</value>
+					<value>85</value>
+					<value>86</value>
+					<value>87</value>
+					<value>88</value>
+					<value>89</value>
+					<value>90</value>
+					<value>91</value>
+					<value>92</value>
+					<value>93</value>
+					<value>94</value>
+					<value>95</value>
+					<value>96</value>
+					<value>97</value>
+					<value>98</value>
+					<value>99</value>
+					<value>100</value>
+					<value>101</value>
+					<value>102</value>
+					<value>103</value>
+					<value>104</value>
+					<value>105</value>
+					<value>106</value>
+					<value>107</value>
+					<value>108</value>
+					<value>109</value>
+					<value>110</value>
+					<value>111</value>
+					<value>112</value>
+					<value>113</value>
+					<value>114</value>
+					<value>115</value>
+					<value>116</value>
+					<value>117</value>
+					<value>118</value>
+					<value>119</value>
+					<value>120</value>
+					<value>121</value>
+					<value>122</value>
+					<value>123</value>
+					<value>124</value>
+					<value>125</value>
+					<value>126</value>
+					<value>127</value>
+					<value>128</value>
+					<value>129</value>
+					<value>130</value>
+					<value>131</value>
+					<value>132</value>
+					<value>133</value>
+					<value>134</value>
+					<value>135</value>
+					<value>136</value>
+					<value>137</value>
+					<value>138</value>
+					<value>139</value>
+					<value>140</value>
+					<value>141</value>
+<!--					<value>À DISPOSIÇÃO DE OUTRO ÓRGÃO</value>-->
+<!--					<value>À DISPOSIÇÃO DESTE ÓRGÃO</value>-->
+<!--					<value>ABONO PERMANÊNCIA</value>-->
+<!--					<value>ABONO PERMANÊNCIA DO FUNPREV/BAPREV</value>-->
+<!--					<value>ADESÃO AO PLANSERV</value>-->
+<!--					<value>ADICIONAL NOTURNO</value>-->
+<!--					<value>ADICIONAL POR TEMPO DE SERVIÇO</value>-->
+<!--					<value>ADICIONAL POR TITULAÇÃO</value>-->
+<!--					<value>ADVERTÊNCIA</value>-->
+<!--					<value>AJUDA DE CUSTO</value>-->
+<!--					<value>ALTERAÇÃO DE NOME</value>-->
+<!--					<value>ALTERAÇÃO DE SÍMBOLO</value>-->
+<!--					<value>ANTECIPAÇÃO DE TÉRMINO CONTRATO</value>-->
+<!--					<value>ANULAÇÃO DE PENALIDADE</value>-->
+<!--					<value>APOSENTADORIA</value>-->
+<!--					<value>ATESTADO MÉDICO</value>-->
+<!--					<value>ATIVIDADE DE CLASSE</value>-->
+<!--					<value>AUTORIZAÇÃO PARA AFASTAMENTO FORA DO PAÍS</value>-->
+<!--					<value>AUXÍLIO NATALIDADE</value>-->
+<!--					<value>AUXÍLIO TESE</value>-->
+<!--					<value>AUXÍLIO TRANSPORTE</value>-->
+<!--					<value>AVERBAÇÃO CARGO PERMANENTE/REDA</value>-->
+<!--					<value>AVERBAÇÃO DO CARGO COMISSIONADO</value>-->
+<!--					<value>CET</value>-->
+<!--					<value>CONDENAÇÃO À PENA PRIVATIVA</value>-->
+<!--					<value>CONTAGEM EM DOBRO DE LICENÇA PRÊMIO</value>-->
+<!--					<value>CONTRATAÇÃO CLT</value>-->
+<!--					<value>CONTRATAÇÃO DE ESTAGIÁRIO</value>-->
+<!--					<value>CONTRATAÇÃO DE PRESTADOR SERVIÇOS</value>-->
+<!--					<value>CONTRATAÇÃO FUNCIONÁRIO REDA</value>-->
+<!--					<value>CONTRATAÇÃO PROFESSOR REDA</value>-->
+<!--					<value>CONVOCAÇÃO</value>-->
+<!--					<value>ENQUADRAMENTO NO PLANO DE CARREIRA</value>-->
+<!--					<value>ENTRAR EM EXERCÍCIO</value>-->
+<!--					<value>ESTABILIDADE ECONÔMICA</value>-->
+<!--					<value>EXCLUSAO MEMBRO COMISSÃO</value>-->
+<!--					<value>EXONERAÇÃO A BEM DO SERVIÇO PÚBLICO</value>-->
+<!--					<value>EXONERAÇÃO A PEDIDO</value>-->
+<!--					<value>EXONERAÇÃO DE CARGO COMISSIONADO</value>-->
+<!--					<value>FALECIMENTO</value>-->
+<!--					<value>FALTAS</value>-->
+<!--					<value>FÉRIAS</value>-->
+<!--					<value>GDT</value>-->
+<!--					<value>HOMOLOGAÇÃO</value>-->
+<!--					<value>INCENTIVO FUNCIONAL</value>-->
+<!--					<value>INCENTIVO POR PRODUÇÃO CIENTÍFICA</value>-->
+<!--					<value>INSALUBRIDADE</value>-->
+<!--					<value>INTERRUPÇÃO DE BENEFÍCIO (INSALUBRIDADE, ETC)</value>-->
+<!--					<value>INTERRUPÇÃO DE LICENÇA</value>-->
+<!--					<value>ISENÇÃO DE TAXA DO CURSO DE PÓS-GRADUAÇÃO</value>-->
+<!--					<value>LICENÇA À ADOTANTE</value>-->
+<!--					<value>LICENÇA A SERVIDOR ATLETA</value>-->
+<!--					<value>LICENÇA ACIDENTE DE TRABALHO</value>-->
+<!--					<value>LICENÇA AMAMENTAÇÃO</value>-->
+<!--					<value>LICENÇA MATERNIDADE</value>-->
+<!--					<value>LICENÇA MÉDICA</value>-->
+<!--					<value>LICENÇA PARA ALISTAMENTO ELEITORAL</value>-->
+<!--					<value>LICENÇA PARA CONCORRER A MANDATO ELETIVO</value>-->
+<!--					<value>LICENÇA PARA CURSAR PÓS GRADUAÇÃO</value>-->
+<!--					<value>LICENÇA PARA DOAÇÃO DE SANGUE</value>-->
+<!--					<value>LICENÇA PARA EXERCER MANDATO ELETIVO</value>-->
+<!--					<value>LICENÇA PARA POR MOTIVO DE CASAMENTO</value>-->
+<!--					<value>LICENÇA PARA PRESTAR SERVIÇO MILITAR</value>-->
+<!--					<value>LICENÇA PARA TRATAR DE INTERESSE PARTICULAR</value>-->
+<!--					<value>LICENÇA PATERNIDADE</value>-->
+<!--					<value>LICENÇA POR FALECIMENTO DE FAMILIAR</value>-->
+<!--					<value>LICENÇA POR MOTIVO DE AFASTAMENTO DO CÔNJUGE</value>-->
+<!--					<value>LICENÇA POR MOTIVO DE DOENÇA NA FAMÍLIA</value>-->
+<!--					<value>LICENÇA PRÊMIO</value>-->
+<!--					<value>LICENÇA SABÁTICA</value>-->
+<!--					<value>LIVRE NOMEAÇÃO</value>-->
+<!--					<value>MOVIMENTAÇÃO INTERNA</value>-->
+<!--					<value>MUDANÇA DE CARGA HORÁRIA</value>-->
+<!--					<value>MUDANÇA DE CLASSE (PROMOÇÃO NA CARREIRA)</value>-->
+<!--					<value>MUDANÇA DE CLASSE E NÍVEL</value>-->
+<!--					<value>MUDANÇA DE NÍVEL (PROGRESSÃO NA CARREIRA)</value>-->
+<!--					<value>MUDANÇA DE REGIME JURÍDICO</value>-->
+<!--					<value>NÃO-ADIANTAMENTO DO 13º SALÁRIO</value>-->
+<!--					<value>NOMEAÇÃO</value>-->
+<!--					<value>NOMEAÇÃO PARA CARGO COMISSIONADO</value>-->
+<!--					<value>OPÇÃO FGTS</value>-->
+<!--					<value>PAGAMENTO RETROATIVO</value>-->
+<!--					<value>PARTICIPAÇÃO EM COMISSÃO</value>-->
+<!--					<value>PENSÃO ALIMENTÍCIA</value>-->
+<!--					<value>PENSÃO POR MORTE</value>-->
+<!--					<value>PERICULOSIDADE</value>-->
+<!--					<value>POSSE FUNCIONÁRIO EFETIVO</value>-->
+<!--					<value>POSSE PROFESSOR EFETIVO</value>-->
+<!--					<value>PROCESSO ADMINISTRATIVO</value>-->
+<!--					<value>PRORROGAÇÃO CONTRATO REDA</value>-->
+<!--					<value>PRORROGAÇÃO DA CONTRATAÇÃO (ESTÁGIO, PS E CLT)</value>-->
+<!--					<value>PRORROGAÇÃO DE LICENÇA</value>-->
+<!--					<value>PRORROGAÇÃO DE PARTICIPAÇÃO EM COMISSÃO</value>-->
+<!--					<value>PRORROGAÇÃO DE RECONTRATAÇÃO REDA</value>-->
+<!--					<value>PRORROGAÇÃO DE SUBSTITUIÇÃO</value>-->
+<!--					<value>PRORROGAÇÃO PARA CARGO COMISSIONADO</value>-->
+<!--					<value>PRORROGAÇÃO PARA TOMAR POSSE</value>-->
+<!--					<value>READAPTAÇÃO FUNCIONAL</value>-->
+<!--					<value>REAJUSTE DE AUXILIO TRANSPORTE</value>-->
+<!--					<value>REAJUSTE SALARIAL</value>-->
+<!--					<value>RECONTRATAÇÃO REDA</value>-->
+<!--					<value>RELOTAÇÃO</value>-->
+<!--					<value>REMOÇÃO PARA ESTE ÓRGÃO</value>-->
+<!--					<value>REMOÇÃO PARA OUTRO ÓRGÃO</value>-->
+<!--					<value>RESSARCIMENTO</value>-->
+<!--					<value>RESTITUIÇÃO DO FUNPREV</value>-->
+<!--					<value>RETIFICAÇÃO</value>-->
+<!--					<value>RETORNO AO ÓRGÃO DE ORIGEM</value>-->
+<!--					<value>REVOGAÇÃO</value>-->
+<!--					<value>RTI</value>-->
+<!--					<value>SALÁRIO FAMÍLIA</value>-->
+<!--					<value>SUBSTITUIÇÃO</value>-->
+<!--					<value>SUSPENSÃO DE PAGAMENTO</value>-->
+<!--					<value>SUSPENSÃO DISCIPLINAR</value>-->
+<!--					<value>TORNAR SEM EFEITO</value>-->
+				</list>
+			</parameter>
+			<parameter name="caseSensitive">
+					<value>true</value>
+			</parameter>
+		</constraint>
+
+        <constraint name="li:grau_ilegibilidade" type="LIST">    
+            <title>Grau de Ilegibilidade</title>
+		    <parameter name="allowedValues">
+			    <list>
+				    <value></value>
+				    <value>1</value>
+				    <value>2</value>
+			    </list>
+		    </parameter>
+		</constraint>
+	</constraints>
+
+</model>
