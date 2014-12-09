@@ -1,1 +1,452 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- <!DOCTYPE beans PUBLIC '-//SPRING//DTD BEAN//EN' 'http://www.springframework.org/dtd/spring-beans.dtd'> -->
+<model name="sif:sifuesb" xmlns="http://www.alfresco.org/model/dictionary/1.0">
+
+	<description>Modelo de conteúdo do Setor de Informações Funcionais -
+		SIF/UESB
+	</description>
+	<author>Josafá Santos dos Reis</author>
+	<version>0.2</version>
+
+	<imports>
+		<!-- Modelos padrões do Alfresco -->
+		<import prefix="d" uri="http://www.alfresco.org/model/dictionary/1.0"></import>
+		<import prefix="cm" uri="http://www.alfresco.org/model/content/1.0"></import>
+		<import prefix="dl" uri="http://www.alfresco.org/model/datalist/1.0"></import>
+		<!-- Modelos definidos para conteúdos do sif UESB -->
+		<import prefix="li" uri="http://www.uesb.br/model/listas/1.0"></import>
+	</imports>
+
+	<namespaces>
+		<namespace uri="http://www.uesb.br/model/sifuesb/1.0" prefix="sif"></namespace>
+	</namespaces>
+
+	<!-- Definição dos tipos customizados -->
+	<types>
+	
+		<type name="sif:prontuario">
+			<parent>cm:folder</parent>
+			<properties>
+				<property name="sif:prontuario_matricula">
+					<type>d:text</type>
+					<mandatory>true</mandatory>
+				</property>
+				<property name="sif:cargo">
+					<type>d:text</type>
+					<index enabled="true">
+						<tokenised>FALSE</tokenised>
+					</index>
+					<constraints>
+						<constraint ref="li:cargo" />
+					</constraints>
+				</property>
+				<property name="sif:email">
+					<type>d:text</type>
+				</property>
+				<property name="sif:prontuario_protocolo">
+					<type>d:text</type>
+				</property>
+				<property name="sif:modulo">
+					<type>d:text</type>
+					<index enabled="true">
+        				<tokenised>FALSE</tokenised>
+          			</index>
+					<constraints>
+						<constraint ref="li:modulo" />
+					</constraints>
+				</property>
+				<property name="sif:prateleira">
+					<type>d:text</type>
+				</property>
+				<property name="sif:ordem">
+					<type>d:text</type>
+				</property>
+				<property name="sif:tipo_pasta">
+					<type>d:text</type>
+					<constraints>
+						<constraint ref="li:tipo_pasta" />
+					</constraints>
+				</property>
+				<property name="sif:quantidade_pastas">
+					<type>d:int</type>
+					<default>1</default>
+				</property>
+				<property name="sif:prontuario_paginas">
+					<type>d:int</type>
+				</property>
+			</properties>
+		</type>
+		
+		<type name="sif:lista_prontuario">
+			<parent>dl:dataListItem</parent>
+			<properties>
+				<property name="sif:lista_prontuario_matricula">
+					<type>d:text</type>
+					<mandatory>true</mandatory>
+				</property>
+				<property name="sif:lista_prontuario_cargo">
+					<type>d:text</type>
+					<constraints>
+						<constraint ref="li:cargo" />
+					</constraints>
+				</property>
+				<property name="sif:lista_prontuario_email">
+					<type>d:text</type>
+				</property>
+				<property name="sif:lista_prontuario_protocolo">
+					<type>d:text</type>
+				</property>
+				<property name="sif:lista_prontuario_modulo">
+					<type>d:text</type>
+					<constraints>
+						<constraint ref="li:modulo" />
+					</constraints>
+				</property>
+				<property name="sif:lista_prontuario_prateleira">
+					<type>d:text</type>
+				</property>
+				<property name="sif:lista_prontuario_ordem">
+					<type>d:text</type>
+				</property>
+				<property name="sif:lista_prontuario_tipo_pasta">
+					<type>d:text</type>
+					<constraints>
+						<constraint ref="li:tipo_pasta" />
+					</constraints>
+				</property>
+				<property name="sif:lista_prontuario_quantidade_pastas">
+					<type>d:int</type>
+					<default>1</default>
+				</property>
+				<property name="sif:lista_prontuario_paginas">
+					<type>d:int</type>
+				</property>
+			</properties>
+		</type>
+		
+		<type name="sif:documento">
+			<parent>cm:content</parent>
+			<properties>
+				<property name="sif:documento_matricula">
+					<type>d:text</type>
+					<mandatory>true</mandatory>
+<!--					<default>{http://www.uesb.br/model/sifuesb/1.0}prontuario_matricula</default>-->
+				</property>
+				<property name="sif:documento_pasta">
+					<type>d:int</type>
+					<default>1</default>
+				</property>
+				<property name="sif:documento_paginas">
+					<type>d:text</type>
+					<!-- para servidores ativos, quantidade de páginas; para inativos, intervalo -->
+				</property>
+				<property name="sif:documento_original">
+					<type>d:boolean</type>
+					<mandatory>true</mandatory>
+					<default>true</default>
+				</property>
+			</properties>
+		</type>
+		
+		<type name="sif:documento_admissional">
+			<parent>sif:documento</parent>
+			<properties>
+				<property name="sif:tipo_doc_admissional">
+					<type>d:text</type>
+					<index enabled="true">
+            			<tokenised>FALSE</tokenised>
+					</index>
+					<constraints>
+						<constraint ref="li:tipo_doc_admissional" />
+					</constraints>
+				</property>
+			</properties>
+		</type>
+		
+		<type name="sif:documento_funcional">
+			<parent>sif:documento</parent>
+			<properties>
+				<property name="sif:documento_protocolo">
+					<type>d:text</type>
+				</property>
+			</properties>
+		</type>
+		
+		<type name="sif:ficha_admissional">
+			<parent>sif:documento_funcional</parent>
+			<properties>
+				<property name="sif:cpf">
+					<type>d:text</type>
+					<mandatory>true</mandatory>
+				</property>
+			</properties>
+		</type>
+		
+		<type name="sif:processo">
+			<parent>sif:documento_funcional</parent>
+			<properties>
+				<property name="sif:tipo_ocorrencia">
+					<type>d:text</type>
+					<index enabled="true">
+            			<tokenised>FALSE</tokenised>
+         			</index>
+					<constraints>
+						<constraint ref="li:tipo_ocorrencia" />
+					</constraints>
+				</property>
+				<property name="sif:data_criacao">
+					<type>d:date</type>
+				</property>
+				<property name="sif:data_vigencia">
+					<type>d:date</type>
+				</property>
+				<property name="sif:data_final">
+					<type>d:date</type>
+				</property>
+			</properties>
+<!--			<overrides>-->
+<!--  				<property name="cm:name">-->
+<!--  					<constraints>-->
+<!--  						<constraint ref="li:tipo_ocorrencia" />-->
+<!--  					</constraints>-->
+<!--  				</property>-->
+<!--  			</overrides>-->
+		</type>
+		
+		<type name="sif:portaria">
+			<parent>sif:processo</parent>
+			<properties>
+				<property name="sif:numero_portaria">
+					<type>d:text</type>
+					<mandatory>true</mandatory>
+				</property>
+				<property name="sif:data_portaria">
+					<type>d:date</type>
+				</property>
+				<property name="sif:edicao_doe">
+					<type>d:text</type>
+				</property>
+				<property name="sif:data_publicacao_doe">
+					<type>d:date</type>
+				</property>
+			</properties>
+		</type>
+		
+		<type name="sif:frequencia">
+			<parent>sif:documento_funcional</parent>
+			<properties>
+				<property name="sif:frequencia_ano">
+					<type>d:text</type>
+					<mandatory>true</mandatory>
+				</property>
+				<property name="sif:frequencia_mes">
+					<type>d:text</type>
+					<mandatory>true</mandatory>
+				</property>
+			</properties>
+		</type>
+		
+		<!-- ######### Modelagem de listas de dados ######### -->
+		
+		<type name="sif:">
+			<parent></parent>
+			<properties>
+				<property name="sif:">
+					<type></type>
+				</property>
+			</properties>
+			
+		</type>
+		
+		<type name="sif:lista_dadosrh">
+			<parent>dl:dataListItem</parent>
+			<properties>
+				<property name="sif:lsmatricula">
+					<type></type>
+				</property>
+			</properties>
+		</type>
+		
+		<type name="sif:lista_dados_pessoais">
+			<parent>sif:lista_dadosrh</parent>
+			<properties>
+				<property name="sif:lsdata_nascimento">
+					<type>d:date</type>
+				</property>
+				<property name="sif:lssexo">
+					<type>d:text</type>
+					<constraints>
+						<constraint ref="li:sexo" />
+					</constraints>
+				</property>
+				<property name="sif:lsrg">
+					<type>d:text</type>
+				</property>
+				<property name="sif:lscpf">
+					<type>d:text</type>
+				</property>
+			</properties>
+		</type>
+		
+		<type name="sif:lista_dados_funcionais">
+			<parent>sif:lista_dadosrh</parent>
+			<properties>
+				<property name="sif:lidata_admissao">
+					<type>d:date</type>
+				</property>
+				<property name="sif:lidata_saida">
+					<type>d:date</type>
+				</property>
+				<property name="sif:livinculo">
+					<type>d:text</type>
+					<constraints>
+						<constraint ref="li:vinculo" />
+					</constraints>
+				</property>
+				<property name="sif:licargo_permanente">
+					<type>d:text</type>
+					<constraints>
+						<constraint ref="li:cargo" />
+					</constraints>
+				</property>
+				<property name="sif:licargo_temporario">
+					<type></type>
+					<constraints>
+						<constraint ref="li:cargo_temporario" />
+					</constraints>
+				</property>
+				<property name="sif:lisetor_permanente">
+					<type>d:text</type>
+					<constraints>
+						<constraint ref="li:setor_permanente" />
+					</constraints>
+				</property>
+				<property name="sif:lisetor_temporario">
+					<type></type>
+					<constraints>
+						<constraint ref="li:setor_temporario" />
+					</constraints>
+				</property>
+			</properties>
+		</type>
+		
+		<type name="sif:lista_ocorrencia">
+			<parent>sif:lista_dadosrh</parent>
+			<properties>
+				<property name="sif:litipo_ocorrencia">
+					<type>d:text</type>
+					<constraints>
+						<constraint ref="li:tipo_ocorrencia" />
+					</constraints>
+				</property>
+				<property name="sif:lidata_criacao">
+					<type>d:date</type>
+				</property>
+				<property name="sif:lidata_vigencia">
+					<type>d:date</type>
+				</property>
+				<property name="sif:lidata_final">
+					<type>d:date</type>
+				</property>
+			</properties>
+			<overrides>
+  				<property name="cm:name">
+  					<constraints>
+  						<constraint ref="li:tipo_ocorrencia" />
+  					</constraints>
+  				</property>
+  			</overrides>
+		</type>
+		
+		<type name="sif:lista_portaria">
+			<parent>sif:lista_ocorrencia</parent>
+			<properties>
+				<property name="sif:linumero_portaria">
+					<type>d:text</type>
+					<mandatory>true</mandatory>
+				</property>
+				<property name="sif:lidata_portaria">
+					<type>d:date</type>
+				</property>
+				<property name="sif:liedicao_doe">
+					<type>d:text</type>
+				</property>
+				<property name="sif:lidata_publicacao_doe">
+					<type>d:date</type>
+				</property>
+			</properties>
+		</type>
+		
+		<type name="sif:setor">
+			<parent>dl:dataListItem</parent>
+			<properties>
+				<property name="sif:codigo_setor">
+					<type>d:text</type>
+					<mandatory>true</mandatory>
+				</property>
+				<property name="sif:sigla_setor">
+					<type>d:text</type>
+					<mandatory>true</mandatory>
+				</property>
+			</properties>
+			<associations>
+				<association name="sif:setor_superior">
+					<source>
+						<mandatory>false</mandatory>
+						<many>true</many>
+					</source>
+					<target>
+						<class>sif:setor</class>
+						<mandatory>false</mandatory>
+						<many>true</many>
+					</target>
+				</association>
+			</associations>
+		</type>
+		
+		<!--
+		<type name="sif:cargo">
+			<parent>dl:dataListItem</parent>
+			<properties>
+				<property sif:codigo_cargo>
+					<type>d:text</type>
+					<mandatory>true</mandatory>
+				</property>
+				<property sif:cargo_permanente>
+					<type>d:boolean</type>
+					<default>true</default>
+					<mandatory>true</mandatory>
+				</property>
+			</properties>
+		</type>
+		-->
+		
+	</types>
+	
+	<!-- Definição dos aspectos customizados -->
+	<aspects>
+
+	<aspect name="sif:ilegivel">
+		<properties>
+			<property name="sif:grau_ilegibilidade">
+				<type>d:text</type>
+				<index enabled="true">
+					<tokenised>FALSE</tokenised>
+				</index>
+				<constraints>
+					<constraint ref="li:grau_ilegibilidade" />
+				</constraints>
+			</property>
+			<property name="sif:paginas_ilegiveis">
+				<type>d:text</type>
+			</property>
+			<property name="sif:desc_ilegibilidade">
+				<type>d:text</type>
+				<mandatory>true</mandatory>
+			</property>
+		</properties>
+	</aspect>
+
+</aspects>
+	
+</model>
