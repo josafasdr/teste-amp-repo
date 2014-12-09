@@ -32,4 +32,21 @@
         <property name="nodeLocatorService" ref="nodeLocatorService" />
     </bean>
     
+	<!-- Registration of new models -->
+	<bean id="${project.artifactId}_dictionaryBootstrap" parent="dictionaryModelBootstrap"
+		depends-on="dictionaryBootstrap">
+		<property name="models">
+			<list>
+				<value>alfresco/module/${project.artifactId}/model/listasModel.xml</value>
+				<value>alfresco/module/${project.artifactId}/model/sifuesbModel.xml</value>
+			</list>
+		</property>
+		<property name="labels">
+			<list>
+				<value>alfresco/module/${project.artifactId}/messages/listasModel</value>
+				<value>alfresco/module/${project.artifactId}/messages/sifuesbModel</value>
+			</list>
+		</property>
+	</bean>
+    
 </beans>

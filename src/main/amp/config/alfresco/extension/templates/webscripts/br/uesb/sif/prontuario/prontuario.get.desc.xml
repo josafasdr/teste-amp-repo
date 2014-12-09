@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<webscript>
+	<shortname>Busaca Prontuário</shortname>
+	<description>Busca dados do prontuário por número de matrícula</description>
+	<family>SIF/UESB</family>
+	<url>/sif/prontuario/{matricula}</url>
+	<format default="json">any</format>
+	<authentication>user</authentication>
+</webscript>

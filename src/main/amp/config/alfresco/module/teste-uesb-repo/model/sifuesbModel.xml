@@ -247,7 +247,7 @@
 		</type>
 		
 		<!-- ######### Modelagem de listas de dados ######### -->
-		
+		<!--
 		<type name="sif:">
 			<parent></parent>
 			<properties>
@@ -376,6 +376,7 @@
 				</property>
 			</properties>
 		</type>
+		-->
 		
 		<type name="sif:setor">
 			<parent>dl:dataListItem</parent>

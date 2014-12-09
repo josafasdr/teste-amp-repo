@@ -1,0 +1,7 @@
+<webscript>
+	<shortname>Photo Search</shortname>
+	<description>Searches the specified site for photos</description>
+	<url>/photo-search/{site}?maxResults={maxResults?}</url>
+	<format default="html">extension</format>
+	<authentication>user</authentication>
+</webscript>
