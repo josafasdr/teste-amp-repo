@@ -1,14 +1,14 @@
 const DEFAULT_MAX_RESULTS = 500;
-const SITES_SPACE_QNAME_PATH = "/app:company_home/st:sites/";
+const SITES_SPACE_QNAME_PATH = "/app:company_home/st:sites/cm:sif";
 
-function doSearch(siteId, maxResults)
+//var matricula;
+
+function doSearch(matricula, maxResults)
 {
     var alfQuery =
-        'ASPECT:"exif:exif"' +
-        ' AND PATH:"' + SITES_SPACE_QNAME_PATH + '/cm:' + siteId +
-        '/cm:documentLibrary//*"'; +
-        ' AND NOT TYPE:"{http://www.alfresco.org/model/content/1.0}thumbnail"' +
-        ' AND NOT TYPE:"{http://www.alfresco.org/model/content/1.0}folder"';
+    	'PATH:"' + SITES_SPACE_QNAME_PATH + '/cm:documentLibrary//*"' +
+        ' AND TYPE:"{http://www.uesb.br/model/sifuesb/1.0}prontuario"' +
+        ' AND (sif:prontuario_matricula:' + matricula + ')';
 
     var queryDef = {
         query: alfQuery,
@@ -22,13 +22,13 @@ function doSearch(siteId, maxResults)
 
 function main()
 {
-    var siteId = url.templateArgs.site;
+    var matricula = url.templateArgs.matricula;
     var maxResults = (args.maxResults !== null) ? parseInt(args.maxResults) : DEFAULT_MAX_RESULTS; 
 
-    var nodes = doSearch(siteId, maxResults);
+    var nodes = doSearch(matricula, maxResults);
 
     model.nodes = nodes;
-    model.site = siteId;
+    model.matricula = matricula;
 }
 
 main();

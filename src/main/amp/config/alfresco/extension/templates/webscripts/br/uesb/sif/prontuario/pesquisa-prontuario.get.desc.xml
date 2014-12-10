@@ -1,0 +1,7 @@
+<webscript>
+	<shortname>Photo Search</shortname>
+	<description>Searches the specified site for photos</description>
+	<url>/sif/pesquisa-prontuario/{matricula}</url>
+	<format default="html">extension</format>
+	<authentication>user</authentication>
+</webscript>
