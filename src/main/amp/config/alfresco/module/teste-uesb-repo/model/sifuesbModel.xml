@@ -33,9 +33,11 @@
 				</property>
 				<property name="sif:cargo">
 					<type>d:text</type>
-					<index enabled="true">
-						<tokenised>FALSE</tokenised>
-					</index>
+<!-- 					<index enabled="true">
+						<atomic>true</atomic>
+                   		<stored>false</stored>
+						<tokenised>false</tokenised>
+					</index> -->
 					<constraints>
 						<constraint ref="li:cargo" />
 					</constraints>
@@ -49,7 +51,9 @@
 				<property name="sif:modulo">
 					<type>d:text</type>
 					<index enabled="true">
-        				<tokenised>FALSE</tokenised>
+						<atomic>true</atomic>
+                   		<stored>false</stored>
+        				<tokenised>false</tokenised>
           			</index>
 					<constraints>
 						<constraint ref="li:modulo" />
@@ -154,7 +158,9 @@
 				<property name="sif:tipo_doc_admissional">
 					<type>d:text</type>
 					<index enabled="true">
-            			<tokenised>FALSE</tokenised>
+						<atomic>true</atomic>
+                   		<stored>false</stored>
+            			<tokenised>false</tokenised>
 					</index>
 					<constraints>
 						<constraint ref="li:tipo_doc_admissional" />
@@ -188,7 +194,9 @@
 				<property name="sif:tipo_ocorrencia">
 					<type>d:text</type>
 					<index enabled="true">
-            			<tokenised>FALSE</tokenised>
+						<atomic>true</atomic>
+                   		<stored>false</stored>
+            			<tokenised>false</tokenised>
          			</index>
 					<constraints>
 						<constraint ref="li:tipo_ocorrencia" />
@@ -493,7 +501,9 @@
 			<property name="sif:grau_ilegibilidade">
 				<type>d:text</type>
 				<index enabled="true">
-					<tokenised>FALSE</tokenised>
+					<atomic>true</atomic>
+                	<stored>false</stored>
+					<tokenised>false</tokenised>
 				</index>
 				<constraints>
 					<constraint ref="li:grau_ilegibilidade" />

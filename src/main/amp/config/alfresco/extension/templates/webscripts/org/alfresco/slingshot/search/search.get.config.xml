@@ -1,0 +1,4 @@
+<search>
+   <default-operator>AND</default-operator>
+   <default-query-template>%(cm:name cm:title cm:description ia:whatEvent ia:descriptionEvent lnk:title lnk:description sif:prontuario_matricula sif:prontuario_protocolo sif:documento_matricula sif:documento_protocolo TEXT TAG)</default-query-template>
+</search>

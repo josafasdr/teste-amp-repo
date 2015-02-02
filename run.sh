@@ -3,7 +3,7 @@
 springloadedfile=~/.m2/repository/org/springframework/springloaded/1.2.0.RELEASE/springloaded-1.2.0.RELEASE.jar
 
 if [ ! -f $springloadedfile ]; then
-mvn validate -Psetup
+/opt/Apache/apache-maven-3.2.3/bin/mvn validate -Psetup
 fi
 
-MAVEN_OPTS="-javaagent:$springloadedfile -noverify -Xms256m -Xmx2G -XX:PermSize=300m" mvn integration-test -Pamp-to-war
+MAVEN_OPTS="-javaagent:$springloadedfile -noverify -Xms256m -Xmx2G -XX:PermSize=300m" /opt/Apache/apache-maven-3.2.3/bin/mvn integration-test -Pamp-to-war
