@@ -16,6 +16,14 @@
 
 	<constraints>
 	
+	   <!-- <constraint name="li:tipo_ocorrencia" type="br.uesb.sif.constraints.ListOfValuesQueryContraint">
+            <title>Tipos de ocorrência</title>
+            <parameter name="allowedValues">
+                <list>
+                </list>
+            </parameter>            
+        </constraint> -->
+                
 		<!-- Tipos de pastas de prontuario -->
 		<constraint name="li:sexo" type="LIST">
 			<title>Tipos de Pasta</title>
@@ -219,6 +227,7 @@
 		</constraint>
 		
 		<!-- Lista de tipos de ocorrência -->
+		
 		<constraint name="li:tipo_ocorrencia" type="LIST">
 			<title>Tipos de ocorrência</title>
 			<parameter name="allowedValues">
@@ -486,6 +495,7 @@
 					<value>true</value>
 			</parameter>
 		</constraint>
+
 
         <constraint name="li:grau_ilegibilidade" type="LIST">    
             <title>Grau de Ilegibilidade</title>

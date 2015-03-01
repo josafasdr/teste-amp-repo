@@ -1,0 +1,9 @@
+<webscript>
+    <shortname>Get content location and size</shortname>
+    <description>Gets the physical location for the content and size of the content</description>
+    <url>/getContentLocation?nodeid={nodeid}</url>
+    <url>/getContentLocation.json?nodeid={nodeid}</url>
+    <url>/getContentLocation.xml?nodeid={nodeid}</url>
+    <format default="json">extension</format>
+    <authentication>user</authentication>
+</webscript>
