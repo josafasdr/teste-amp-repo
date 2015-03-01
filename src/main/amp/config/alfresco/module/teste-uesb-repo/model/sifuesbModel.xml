@@ -33,9 +33,11 @@
 				</property>
 				<property name="sif:cargo">
 					<type>d:text</type>
-					<index enabled="true">
-						<tokenised>FALSE</tokenised>
-					</index>
+<!-- 					<index enabled="true">
+						<atomic>true</atomic>
+                   		<stored>false</stored>
+						<tokenised>false</tokenised>
+					</index> -->
 					<constraints>
 						<constraint ref="li:cargo" />
 					</constraints>
@@ -49,7 +51,9 @@
 				<property name="sif:modulo">
 					<type>d:text</type>
 					<index enabled="true">
-        				<tokenised>FALSE</tokenised>
+						<atomic>true</atomic>
+                   		<stored>false</stored>
+        				<tokenised>false</tokenised>
           			</index>
 					<constraints>
 						<constraint ref="li:modulo" />
@@ -154,7 +158,9 @@
 				<property name="sif:tipo_doc_admissional">
 					<type>d:text</type>
 					<index enabled="true">
-            			<tokenised>FALSE</tokenised>
+						<atomic>true</atomic>
+                   		<stored>false</stored>
+            			<tokenised>false</tokenised>
 					</index>
 					<constraints>
 						<constraint ref="li:tipo_doc_admissional" />
@@ -188,7 +194,9 @@
 				<property name="sif:tipo_ocorrencia">
 					<type>d:text</type>
 					<index enabled="true">
-            			<tokenised>FALSE</tokenised>
+						<atomic>true</atomic>
+                   		<stored>false</stored>
+            			<tokenised>false</tokenised>
          			</index>
 					<constraints>
 						<constraint ref="li:tipo_ocorrencia" />
@@ -266,7 +274,9 @@
 				</property>
 			</properties>
 		</type>
+		-->
 		
+		<!--
 		<type name="sif:lista_dados_pessoais">
 			<parent>sif:lista_dadosrh</parent>
 			<properties>
@@ -279,6 +289,63 @@
 						<constraint ref="li:sexo" />
 					</constraints>
 				</property>
+				<property name="sif:lsnome_mae">
+					<type></type>
+				</property>
+				<property name="sif:lsnome_pai">
+					<type></type>
+				</property>
+				<property name="sif:lsestado_civil">
+					<type></type>
+				</property>
+				<property name="sif:lsnacionalidade">
+					<type></type>
+				</property>
+				<property name="sif:lsnaturalidade">
+					<type></type>
+				</property>
+				<property name="sif:lstipo_saguineo">
+					<type></type>
+				</property>
+				<property name="sif:lsetnia">
+					<type></type>
+				</property>
+				<property name="sif:lsdeficiencia">
+					<type></type>
+				</property>
+				<property name="sif:lsendereco">
+					<type></type>
+				</property>
+				<property name="sif:lscomplemento">
+					<type></type>
+				</property>
+				<property name="sif:lsbairro">
+					<type></type>
+				</property>
+				<property name="sif:lscep">
+					<type></type>
+				</property>
+				<property name="sif:lscidade">
+					<type></type>
+				</property>
+				<property name="sif:lsuf">
+					<type></type>
+				</property>
+				<property name="sif:lstelefone">
+					<type></type>
+				</property>
+				<property name="sif:lscelular">
+					<type></type>
+				</property>
+				<property name="sif:lsfax">
+					<type></type>
+				</property>
+				<property name="sif:lsemail">
+					<type></type>
+				</property>
+				<property name="sif:lshomepage">
+					<type></type>
+				</property>
 				<property name="sif:lsrg">
 					<type>d:text</type>
 				</property>
@@ -287,7 +354,9 @@
 				</property>
 			</properties>
 		</type>
+		-->
 		
+		<!--
 		<type name="sif:lista_dados_funcionais">
 			<parent>sif:lista_dadosrh</parent>
 			<properties>
@@ -432,7 +501,9 @@
 			<property name="sif:grau_ilegibilidade">
 				<type>d:text</type>
 				<index enabled="true">
-					<tokenised>FALSE</tokenised>
+					<atomic>true</atomic>
+                	<stored>false</stored>
+					<tokenised>false</tokenised>
 				</index>
 				<constraints>
 					<constraint ref="li:grau_ilegibilidade" />

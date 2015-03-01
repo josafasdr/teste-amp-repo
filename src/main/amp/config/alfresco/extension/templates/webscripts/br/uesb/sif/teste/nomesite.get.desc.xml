@@ -1,0 +1,7 @@
+<webscript>
+	<shortname>Nome do site</shortname>
+	<description>Exibe o mome do site</description>
+	<url>/sif/nomesite</url>
+	<format default="html">extension</format>
+	<authentication>user</authentication>
+</webscript>
