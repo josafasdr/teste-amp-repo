@@ -33,11 +33,11 @@
 				</property>
 				<property name="sif:cargo">
 					<type>d:text</type>
-<!-- 					<index enabled="true">
+					<index enabled="true">
 						<atomic>true</atomic>
                    		<stored>false</stored>
 						<tokenised>false</tokenised>
-					</index> -->
+					</index>
 					<constraints>
 						<constraint ref="li:cargo" />
 					</constraints>
